@@ -4,7 +4,7 @@
   "description": "A classic todo app",
   "main": "index.js",
   "scripts": {
-    "test": "npm t"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/cfereday/todo-app/issues"
   },
-  "homepage": "https://github.com/cfereday/todo-app#readme"
+  "homepage": "https://github.com/cfereday/todo-app#readme",
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "jest-cli": "^26.0.1"
+  }
 }
