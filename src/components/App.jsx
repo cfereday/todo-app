@@ -1,13 +1,7 @@
-const React = require("react");
+import React, { useState } from 'react';
 
-const App = () => {
-    return (
-        <div>
-            <h1>Hello, world!</h1>;
-        </div>
-    )
-};
-
-module.exports = {
-    App
-};
+export function App() {
+    const [checked, setChecked] = useState(false);
+    const handleClick = () => setChecked(!checked);
+    return <input type="checkbox" name="Something to do" onClick={handleClick} checked={checked}/>
+}
