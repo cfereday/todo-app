@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { CheckBox } from './Checkbox.jsx';
+import React, {useState} from 'react';
+import {ToDo} from './ToDo.jsx';
 
 export function App() {
-    const [checked, setChecked] = useState(false);
-    const handleClick = () => setChecked(!checked);
-    return <CheckBox onClick={handleClick} isChecked={checked}/>
+    const [done, setChecked] = useState(false);
+    const handleClick = () => setChecked(!done);
+    return <ToDo onClick={handleClick} isChecked={done} task={"Something To Do"} id={1}/>
 }
