@@ -1,0 +1,23 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A classic todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cfereday/todo-app.git"
+  },
+  "keywords": [
+    "todo",
+    "react"
+  ],
+  "author": "Charlotte Fereday",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfereday/todo-app/issues"
+  },
+  "homepage": "https://github.com/cfereday/todo-app#readme"
+}
