@@ -2,7 +2,7 @@ const React = require("react");
 
 const App = () => {
     return (
-        <div id="app">
+        <div>
             <h1>Hello, world!</h1>;
         </div>
     )
