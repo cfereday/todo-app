@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
 
 export function App() {
-    const [state, updateState] = useState({task: 'Example note', id: 0, done: false});
+    const [state, updateState] = useState({note: 'Example note', unique: 0, done: false});
+    const createId = () => state.unique + 1;
 
     return (
         <div>
-            {<ToDo onUserChanges={updateState} isChecked={ state.done } task={state.task} id={state.id}/>}
+            {<ToDo onUserChanges={updateState} isChecked={ state.done } task={state.note} id={createId()}/>}
         </div>
     )
 }
