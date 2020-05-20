@@ -10,12 +10,14 @@
 3. Install the dependencies:
 `npm install`
 
-4. Webpack build
+4. Webpack build:
 `npm run build`
 
-5. Run the app
+5. Run the app:
 `npm run start`
 
+6. Navigate to localhost url:
+`http://localhost:9000/`
 
 ## Tests
 This app uses [Jest](https://jestjs.io/docs/en/getting-started) for it's tests.
