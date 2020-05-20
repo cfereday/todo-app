@@ -1,20 +1,27 @@
 import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
-import {AddToDoButton} from './AddToDoButton.jsx';
 
 export function App() {
-    const [state, updateState] = useState({note: 'Example note', unique: 0, done: false});
-    const createId = () => state.unique + 1;
+    const todos = [{note: 'Number 1', unique: 1, done: true},{note: 'Number 2', unique: 2, done: true},{note: 'Number 3', unique: 3, done: false},]
+
+    const [currentToDos, updatedToDos] = useState(todos);
+    const doneChanged = ({unique, done}) => {
+        const changedToDos = currentToDos.map(todo => {
+            if (unique === todo.unique) {
+                return {... todo, done: done}
+            }
+            return todo;
+        });
+
+        updatedToDos(changedToDos);
+    };
 
     return (
         <div>
             <h1>To Do</h1>
-            <AddToDoButton/>
-
             <br/>
-            <br/>
-
-            {<ToDo onUserChanges={updateState} isChecked={ state.done } task={state.note} id={createId()}/>}
+            { currentToDos.map(todo => <li><ToDo todo={todo} doneChanged={doneChanged}/></li>)}
         </div>
     )
+
 }
