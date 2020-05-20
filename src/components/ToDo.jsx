@@ -19,11 +19,11 @@ export const ToDo = ({task, id, isChecked, onUserChanges}) => {
 
     return (
         <React.Fragment>
-            <input name="toDo" key={id} type="checkbox" checked={isChecked} onChange={(event) => {
+            <input name="toDo" type="checkbox" checked={isChecked} onChange={(event) => {
                 const latestState = handleCheckedBoxChange(event);
                 onUserChanges(latestState);
             }}/>
-            <textarea value={task} onChange={(event) => {
+            <input name="task" type="text" onChange={(event) => {
                 const latestState = handleInputchange(event);
                 onUserChanges(latestState);
             }}/>
