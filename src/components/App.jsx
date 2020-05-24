@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
+import {AddToDoButton} from './AddToDoButton.jsx';
 
 export function App() {
     const todos = [{note: 'Number 1', unique: 1, done: true},{note: 'Number 2', unique: 2, done: true},{note: 'Number 3', unique: 3, done: false}];
@@ -19,6 +20,8 @@ export function App() {
     return (
         <div>
             <h1>To Do</h1>
+            <br/>
+            {<AddToDoButton doneChanged={doneChanged}/>}
             <br/>
             { currentToDos.map(todo => <li><ToDo todo={todo} doneChanged={doneChanged}/></li>)}
         </div>

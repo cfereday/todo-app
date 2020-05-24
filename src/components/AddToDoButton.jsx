@@ -1,9 +1,14 @@
 import React from 'react';
+import {ToDo} from './ToDo.jsx';
 
-export const AddToDoButton = () => {
+const sampleToDo = {note: 'Number 4', unique: 4, done: false};
+
+export const AddToDoButton = ({doneChanged}) => {
     return (
-        <button onClick={() => console.log('Hey I was clicked')}>
-            Add To Do
+        <button data-testid={`todo-button`} value="Create new ToDo" onClick={() =>
+             <ToDo todo={sampleToDo} doneChanged={doneChanged}/>}
+        >
+            Add new todo
         </button>
     );
 };
