@@ -1,17 +1,29 @@
 import React from 'react';
 import {cleanup, fireEvent, render, screen } from '@testing-library/react';
 import {App} from '../src/components/App';
-import {afterEach} from "@jest/globals";
+import {afterEach, expect} from "@jest/globals";
 
 afterEach(cleanup);
 
-it('ToDo Checkbox is true when clicked & false otherwise ', () => {
-    render(<App/>);
-    const  todo = screen.getByTestId('todo-1');
+describe('App - manages ToDO', () => {
+    it('ToDo Checkbox is true when clicked & false otherwise ', () => {
+        render(<App/>);
+        const  todo = screen.getByTestId('todo-checked-1');
 
-    expect(todo.checked).toBeTruthy();
-    fireEvent.click(todo);
+        expect(todo.checked).toBeTruthy();
+        fireEvent.click(todo);
 
-    const updatedTodo = screen.getByTestId('todo-1');
-    expect(updatedTodo.checked).toBeFalsy();
+        const updatedTodo = screen.getByTestId('todo-checked-1');
+        expect(updatedTodo.checked).toBeFalsy();
+    });
+
+    it('ToDo Note changes as a user types in different tasks', () => {
+        render(<App/>);
+        const  todo = screen.getByTestId('todo-note-1');
+        expect(todo.value).toEqual('Number 1');
+
+        fireEvent.change(todo, { target: { value: 'Some very important note' } });
+        const updatedTodo = screen.getByTestId('todo-note-1');
+        expect(updatedTodo.value).toEqual('Some very important note')
+    })
 });
