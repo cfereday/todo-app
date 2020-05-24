@@ -15,11 +15,11 @@ export const ToDo = ({ todo, doneChanged }) => {
 
     return (
         <React.Fragment>
-            <input name="toDo" type="checkbox" checked={todo.done} onChange={(event) => {
-                console.log('onchange: checkbox', event);
-                const gatheredInfo = { unique: todo.unique, done: event.target.checked }
-                doneChanged(gatheredInfo)
-            }}/>
+            <input data-testid={`todo-${todo.unique}`} name="toDo" type="checkbox" checked={todo.done}
+                   onChange={(event) => {
+                       const gatheredInfo = {unique: todo.unique, done: event.target.checked};
+                       doneChanged(gatheredInfo)
+                   }}/>
             <input name="task" type="text" value={todo.note} onChange={(event) => {
                 console.log('onchange: text', event);
                 // handleInputchange(event);

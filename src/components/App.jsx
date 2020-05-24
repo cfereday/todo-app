@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
 
 export function App() {
-    const todos = [{note: 'Number 1', unique: 1, done: true},{note: 'Number 2', unique: 2, done: true},{note: 'Number 3', unique: 3, done: false},]
+    const todos = [{note: 'Number 1', unique: 1, done: true},{note: 'Number 2', unique: 2, done: true},{note: 'Number 3', unique: 3, done: false}];
 
     const [currentToDos, updatedToDos] = useState(todos);
     const doneChanged = ({unique, done}) => {
