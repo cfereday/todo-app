@@ -4,9 +4,7 @@ import {AddToDoButton} from './AddToDoButton.jsx';
 
 export function App() {
     const [currentToDos, updatedToDos] = useState([
-        {note: 'Number 1', unique: 1, done: true},
-        {note: 'Number 2', unique: 2, done: true},
-        {note: 'Number 3', unique: 3, done: false}
+        {note: 'An example ToDo', unique: 1, done: false},
         ]);
     const doneChanged = ({unique, done, note}) => {
         const changedToDos = currentToDos.map(todo => {

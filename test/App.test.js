@@ -10,17 +10,17 @@ describe('App - manages ToDO', () => {
         render(<App/>);
         const  todo = screen.getByTestId('todo-checked-1');
 
-        expect(todo.checked).toBeTruthy();
+        expect(todo.checked).toBeFalsy();
         fireEvent.click(todo);
 
         const updatedTodo = screen.getByTestId('todo-checked-1');
-        expect(updatedTodo.checked).toBeFalsy();
+        expect(updatedTodo.checked).toBeTruthy();
     });
 
     it('ToDo Note changes as a user types in different tasks', () => {
         render(<App/>);
         const  todo = screen.getByTestId('todo-note-1');
-        expect(todo.value).toEqual('Number 1');
+        expect(todo.value).toEqual('An example ToDo');
 
         fireEvent.change(todo, { target: { value: 'Some very important note' } });
         const updatedTodo = screen.getByTestId('todo-note-1');
@@ -33,7 +33,7 @@ describe('App - manages ToDO', () => {
         expect(createNewTodo).toBeTruthy();
 
         fireEvent.click(createNewTodo);
-        const  freshToDo = screen.getByTestId('todo-note-4');
+        const  freshToDo = screen.getByTestId('todo-note-2');
         expect(freshToDo).toBeTruthy();
     });
 });
