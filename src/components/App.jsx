@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
 import {AddToDoButton} from './AddToDoButton.jsx';
+import '../styles/Base.css';
 
 export function App() {
     const [currentToDos, updatedToDos] = useState([
@@ -37,8 +38,8 @@ export function App() {
     };
 
     return (
-        <div>
-            <h1>To Do</h1>
+        <div className="body">
+            <h1 className="H1">To Do</h1>
             <br/>
             {<AddToDoButton addToDo={addANewToDo}/>}
             <br/>
