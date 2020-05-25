@@ -27,13 +27,13 @@ describe('App - manages ToDO', () => {
         expect(updatedTodo.value).toEqual('Some very important note')
     });
 
-    it.skip('Has a button that when clicked, creates a new ToDo', () => {
+    it('Has a button that when clicked, creates a new ToDo', () => {
         render(<App/>);
         const createNewTodo = screen.getByTestId('todo-button');
         expect(createNewTodo).toBeTruthy();
 
         fireEvent.click(createNewTodo);
-        const  todoSecond = screen.getByTestId('todo-note-4');
-        expect(todoSecond.value).toEqual('Number 4');
+        const  freshToDo = screen.getByTestId('todo-note-4');
+        expect(freshToDo).toBeTruthy();
     });
 });

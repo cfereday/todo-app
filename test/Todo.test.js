@@ -15,5 +15,4 @@ it.skip('Checkbox is true when clicked & false otherwise ', () => {
 
     fireEvent.click(checkboxElement);
     expect(checkboxElement.checked).toBeTruthy();
-
 });
