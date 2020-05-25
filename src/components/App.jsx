@@ -19,8 +19,10 @@ export function App() {
         updatedToDos(changedToDos);
     };
 
+    const generateUniqueID = (todos) => todos.pop().unique + 1;
+
     const addANewToDo = () => {
-        const newTodos = [...currentToDos, {note: 'New todo', unique: 4, done: false}];
+        const newTodos = [...currentToDos, {note: 'New todo', unique: generateUniqueID(currentToDos), done: false}];
         updatedToDos(newTodos);
     };
 
