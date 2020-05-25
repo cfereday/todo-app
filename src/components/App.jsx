@@ -6,10 +6,22 @@ export function App() {
     const [currentToDos, updatedToDos] = useState([
         {note: 'An example ToDo', unique: 1, done: false},
         ]);
-    const doneChanged = ({unique, done, note}) => {
+    const updateDoneState = ({unique, done}) => {
         const changedToDos = currentToDos.map(todo => {
             if (unique === todo.unique) {
-                return {...todo, done: done, note: note}
+                return {...todo, done: done}
+            }
+            return todo;
+        });
+
+        updatedToDos(changedToDos);
+    };
+
+
+    const updateNoteState = ({unique, note}) => {
+        const changedToDos = currentToDos.map(todo => {
+            if (unique === todo.unique) {
+                return {...todo, note: note}
             }
             return todo;
         });
@@ -31,7 +43,7 @@ export function App() {
             {<AddToDoButton addToDo={addANewToDo}/>}
             <br/>
             <br/>
-            {currentToDos.map(todo => <li><ToDo todo={todo} doneChanged={doneChanged}/></li>)}
+            {currentToDos.map(todo => <li><ToDo todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/></li>)}
         </div>
     )
 }
