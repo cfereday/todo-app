@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
 import {AddToDoButton} from './AddToDoButton.jsx';
-import '../styles/Base.css';
 
 export function App() {
     const [currentToDos, updatedToDos] = useState([
@@ -44,7 +43,7 @@ export function App() {
             {<AddToDoButton addToDo={addANewToDo}/>}
             <br/>
             <br/>
-            {currentToDos.map(todo => <li><ToDo todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/></li>)}
+            {currentToDos.map(todo => <ToDo todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/>)}
         </div>
     )
 }
