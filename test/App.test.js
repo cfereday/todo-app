@@ -28,6 +28,15 @@ describe('App - manages ToDO', () => {
         expect(savedTodo.value).toEqual('A note I want to save')
     });
 
+    it('entire ToDo is removed when user clicks delete', () => {
+        render(<App/>);
+        const todoDelete = screen.getByTestId('todo-delete-1');
+        fireEvent.click(todoDelete);
+
+        const todoText = screen.queryByText('An example ToDo');
+        expect(todoText).toBeNull()
+    });
+
     it('Has a button that when clicked, creates a new ToDo', () => {
         render(<App/>);
         const createNewTodo = screen.getByTestId('new-todo-button');

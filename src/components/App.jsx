@@ -25,8 +25,12 @@ export function App() {
             }
             return todo;
         });
-
         updatedToDos(changedToDos);
+    };
+
+    const removeToDo = (unique) => {
+        const notRemoved = currentToDos.filter(todo => unique !== todo.unique);
+        updatedToDos(notRemoved);
     };
 
     const generateUniqueID = (todos) => todos.pop().unique + 1;
@@ -43,7 +47,7 @@ export function App() {
             {<AddToDoButton addToDo={addANewToDo}/>}
             <br/>
             <br/>
-            {currentToDos.map(todo => <ToDo key={todo.unique} todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/>)}
+            {currentToDos.map(todo => <ToDo key={todo.unique} todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState} deleteTodo={removeToDo}/>)}
         </div>
     )
 }

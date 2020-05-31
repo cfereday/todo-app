@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ToDo = ({ todo, doneChanged, noteChanged }) => {
+export const ToDo = ({todo, doneChanged, noteChanged, deleteTodo}) => {
     let updatedNote;
     return (
         <React.Fragment>
@@ -15,7 +15,13 @@ export const ToDo = ({ todo, doneChanged, noteChanged }) => {
                    }}/>
             <button data-testid={`todo-save-${todo.unique}`} onClick={(event) => {
                 noteChanged(updatedNote);
-            }}>Save Note</button>
+            }}>Save Note
+            </button>
+            <button data-testid={`todo-delete-${todo.unique}`} onClick={(event) => {
+                deleteTodo(todo.unique);
+            }}>Delete Note
+            </button>
+
         </React.Fragment>
     )
 };
