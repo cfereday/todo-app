@@ -43,7 +43,7 @@ export function App() {
             {<AddToDoButton addToDo={addANewToDo}/>}
             <br/>
             <br/>
-            {currentToDos.map(todo => <ToDo todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/>)}
+            {currentToDos.map(todo => <ToDo key={todo.unique} todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState}/>)}
         </div>
     )
 }

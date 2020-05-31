@@ -20,8 +20,9 @@ describe('App - manages ToDO', () => {
     it('ToDo Note changes when a user clicks save', () => {
         render(<App/>);
         const todoNote = screen.getByTestId('todo-note-1');
+        const todoSave = screen.getByTestId('todo-save-1');
         fireEvent.change(todoNote, {target: {value: 'A note I want to save'}});
-        fireEvent.click(todoNote);
+        fireEvent.click(todoSave);
 
         const savedTodo = screen.getByTestId('todo-note-1');
         expect(savedTodo.value).toEqual('A note I want to save')
