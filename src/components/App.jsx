@@ -33,7 +33,7 @@ export function App() {
         updatedToDos(notRemoved);
     };
 
-    const generateUniqueID = (todos) => todos.pop().unique + 1;
+    const generateUniqueID = (todos) => todos.length === 0 ? 1 : todos.pop().unique + 1;
 
     const addANewToDo = () => {
         const newTodos = [...currentToDos, {note: 'New todo', unique: generateUniqueID(currentToDos), done: false}];
