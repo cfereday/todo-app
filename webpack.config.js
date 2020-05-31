@@ -7,6 +7,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
+  devtool: 'eval-cheap-module-source-map',
   mode: 'development',
   entry: __dirname + '/src/app/index.js',
   module: {
