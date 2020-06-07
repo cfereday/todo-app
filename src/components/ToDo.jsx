@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 export const ToDo = ({todo, doneChanged, noteChanged, deleteTodo}) => {
     const [currentNote, updatedNote] = useState(todo.note);
     return (
-        <React.Fragment>
+        <div>
             <input data-testid={`todo-checked-${todo.unique}`} name="toDo" type="checkbox" checked={todo.done}
                    onChange={(event) => {
                        const gatheredInfo = {unique: todo.unique, done: event.target.checked};
@@ -22,7 +22,7 @@ export const ToDo = ({todo, doneChanged, noteChanged, deleteTodo}) => {
                 deleteTodo(todo.unique);
             }}>Delete Note
             </button>
-        </React.Fragment>
+        </div>
     )
 };
 

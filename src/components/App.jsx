@@ -44,10 +44,7 @@ export function App() {
     return (
         <div className="body">
             <h1 className="H1">To Do</h1>
-            <br/>
             {<AddToDoButton addToDo={addANewToDo}/>}
-            <br/>
-            <br/>
             {currentToDos.map(todo => <ToDo key={todo.unique} todo={todo} doneChanged={updateDoneState} noteChanged={updateNoteState} deleteTodo={removeToDo}/>)}
         </div>
     )
