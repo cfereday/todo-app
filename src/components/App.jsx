@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {ToDo} from './ToDo.jsx';
 import {AddToDoButton} from './AddToDoButton.jsx';
+import '../styles/style.sass';
 
 export function App() {
     const [currentToDos, updatedToDos] = useState([
