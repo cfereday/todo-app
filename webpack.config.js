@@ -19,15 +19,20 @@ module.exports = {
             },
             {
                 test: /\.sass$/i,
-                use: [
-                    'style-loader',
+                use: ['style-loader',
+                    'css-loader',
                     {
                         loader: 'sass-loader',
                         options: {
-                            implementation: require('node-sass'),
+                            // Prefer `dart-sass`
+                            implementation: require('sass'),
+                            sassOptions: {
+                                includePaths: ['./node_modules']
+                            }
                         },
                     },
                 ],
+
             },
         ],
     },
